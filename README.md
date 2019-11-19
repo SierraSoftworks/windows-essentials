@@ -7,14 +7,16 @@
  - [Gaming](#gaming)
  - [Files and Storage](#files-and-storage)
  - [Development](#development)
+ - [Office](#office)
  - [Media](#media)
+ - [System Performance and Overclocking](#system-performance-and-overclocking)
 
 ## Browsers
 #### [Microsoft Edge Insider](https://www.microsoftedgeinsider.com/en-us/)
 ##### Recommended Extensions
  - [uBlock Origin](https://microsoftedge.microsoft.com/insider-addons/detail/odfafepnkmbhccpbejgmiehpchacaeak)
  - [Dashlane](https://microsoftedge.microsoft.com/insider-addons/detail/gehmmocbbkpblljhkekmfhjpfbkclbph)
- - [JON Formatter](https://microsoftedge.microsoft.com/insider-addons/detail/njpoigijhgbionbfdbaopheedbpdoddi)
+ - [JSON Formatter](https://microsoftedge.microsoft.com/insider-addons/detail/njpoigijhgbionbfdbaopheedbpdoddi)
 
 #### [Chrome](https://www.google.com/chrome/)
 ##### Recommended Extensions
@@ -30,6 +32,7 @@
 #### [Keybase](https://keybase.io/download)
 #### [Slack](https://slack.com/downloads/windows)
 #### [Discord](https://discordapp.com/download)
+#### [Microsoft Teams](https://teams.microsoft.com/)
 
 ## Gaming
 #### [Steam](https://store.steampowered.com/about/)
@@ -45,7 +48,9 @@
 
 ## Development
 #### [VSCode](https://code.visualstudio.com/)
+#### [Visual Studio](https://visualstudio.microsoft.com/)
 #### [GitKraken](https://www.gitkraken.com/)
+#### [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701)
 #### [Docker for Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 #### [Bash on Ubuntu on Windows](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 ```powershell
@@ -68,7 +73,15 @@ $ScriptBlock = [ScriptBlock]::Create($SetupScript.Content)
 Invoke-Command -ScriptBlock $ScriptBlock
 ```
 #### [GPG4Win](https://www.gpg4win.org/download.html)
+#### [Yubico Authenticator](https://www.yubico.com/products/services-software/download/yubico-authenticator/)
+
+## Office
+#### [Microsoft Office 365](https://portal.office.com/account#installs)
 
 ## Media
 #### [Google Play Music Desktop Player](https://www.googleplaymusicdesktopplayer.com/)
 #### [K-Lite Mega Codec Pack](https://www.codecguide.com/download_kl.htm)
+
+## System Performance and Overclocking
+#### [Corsair iCUE](https://www.corsair.com/eu/en/icue)
+#### [Ryzen Master](https://www.amd.com/en/technologies/ryzen-master)
