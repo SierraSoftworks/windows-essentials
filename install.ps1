@@ -37,3 +37,9 @@ winget install SourceFoundtry.HackFonts
 Write-Host Installing gaming applications
 winget install GOG.Galaxy
 winget install Valve.Steam
+
+Write-Host Configure PowerShell
+Set-ExecutionPolicy Unrestricted
+$SetupScript = Invoke-WebRequest https://gist.githubusercontent.com/SPARTAN563/77ccb460948afd826365e85d226509a7/raw/setup.ps1
+$ScriptBlock = [ScriptBlock]::Create($SetupScript.Content)
+Invoke-Command -ScriptBlock $ScriptBlock
