@@ -20,6 +20,7 @@ winget install Microsoft.Teams
 
 Write-Host Installing common utilities
 winget install 7zip
+winget install Microsoft.Onedrive
 
 Write-Host Installing developer environment tools
 winget install git
@@ -28,15 +29,18 @@ winget install Axosoft.GitKraken
 winget install Docker.DockerDesktop
 winget install python
 winget install node
+winget install Golang.Go
 winget install Microsoft.dotnet
 winget install Microsoft.WindowsTerminal
 winget install Microsoft.VisualStudioCode
 winget install Microsoft.Powershell
-winget install SourceFoundtry.HackFonts
+winget install SourceFoundry.HackFonts
 
 Write-Host Installing gaming applications
 winget install GOG.Galaxy
 winget install Valve.Steam
+winget install OBSProject.OBSStudio
+winget install TeamSpeakSystems.TeamSpeakClient
 
 Write-Host Configure PowerShell
 Set-ExecutionPolicy Unrestricted
