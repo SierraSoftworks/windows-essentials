@@ -21,6 +21,7 @@ winget install Microsoft.Teams
 Write-Host Installing common utilities
 winget install 7zip
 winget install Microsoft.Onedrive
+winget install 1Password
 
 Write-Host Installing developer environment tools
 winget install git
