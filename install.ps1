@@ -12,10 +12,46 @@ param(
     $DevelopmentDirectory = "${HOME}\dev"
 )
 
+function Install-GitHubBinary {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]
+        $Repo,
+
+        [Parameter(Mandatory = $true)]
+        [string]
+        $File,
+
+        [Parameter(Mandatory = $false)]
+        [string]
+        $Destination = $null,
+
+        [Parameter(Mandatory = $false)]
+        [string]
+        $ReleaseTag = "latest"
+    )
+
+    if ($ReleaseTag -eq "latest") {
+        $ReleaseTag = (Invoke-WebRequest "https://api.github.com/repos/${Repo}/releases" | ConvertFrom-Json)[0].tag_name
+    }
+
+    if ($Destination -eq $null) {
+        $Destination = $File
+    }
+
+    $DestinationDir = [System.IO.Directory]::GetParent($Destination)
+    if (-not $DestinationDir.Exists) {
+        $DestinationDir.Create()
+    }
+
+    Write-Host "Installing ${Repo}:${File}@${ReleaseTag} into ${Destination}"
+    Invoke-WebRequest -Uri "https://github.com/${Repo}/releases/download/${ReleaseTag}/${File}" -OutFile $Destination
+}
+
 if ($null -eq (Get-Command winget -ErrorAction SilentlyContinue)) {
     Write-Error "You do not have the Windows Package Manager installed on your machine. Please install it before proceeding." `
                 -Category NotInstalled `
-                -RecommendedAction "Install the Windows Package Manager using the steps on this page: https://devblogs.microsoft.com/commandline/windows-package-manager-preview/"
+                -RecommendedAction "Install the Windows Package Manager using the steps on this page: https://github.com/microsoft/winget-cli"
 
     exit 1
 }
@@ -64,7 +100,6 @@ Write-Host Configure PowerShell
 $env:PATH += ";${UserProgramFolder}"
 [Environment]::SetEnvironmentVariable("Path", $env:PATH, [System.EnvironmentVariableTarget]::User)
 
-Install-PoshGit
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 
 if (Test-Path -PathType Leaf -Path $profile.CurrentUserAllHosts) {
@@ -99,61 +134,4 @@ if (-not (Get-Command "starship.exe" -ErrorAction SilentlyContinue)) {
     Write-Host "Installing Starship"
     Install-GitHubBinary -Repo "starship/starship" -File "starship-x86_64-pc-windows-msvc.zip" -Destination "${HOME}\Downloads\starship.zip"
     Expand-Archive -Path "${HOME}\Downloads\starship.zip" -DestinationPath $UserProgramFolder
-}
-
-function Install-GitHubBinary {
-    param(
-        [Parameter(Mandatory = $true)]
-        [string]
-        $Repo,
-
-        [Parameter(Mandatory = $true)]
-        [string]
-        $File,
-
-        [Parameter(Mandatory = $false)]
-        [string]
-        $Destination = $null,
-
-        [Parameter(Mandatory = $false)]
-        [string]
-        $ReleaseTag = "latest"
-    )
-
-    if ($ReleaseTag -eq "latest") {
-        $ReleaseTag = (Invoke-WebRequest "https://api.github.com/repos/${Repo}/releases" | ConvertFrom-Json)[0].tag_name
-    }
-
-    if ($Destination -eq $null) {
-        $Destination = $File
-    }
-
-    $DestinationDir = [System.IO.Directory]::GetParent($Destination)
-    if (-not $DestinationDir.Exists) {
-        $DestinationDir.Create()
-    }
-
-    Write-Host "Installing ${Repo}:${File}@${ReleaseTag} into ${Destination}"
-    Invoke-WebRequest -Uri "https://github.com/${Repo}/releases/download/${ReleaseTag}/${File}" -OutFile $Destination
-}
-
-function Install-PoshGit {
-    param (
-        [Parameter(Mandatory = $false)]
-        [string]
-        $Version = "latest"
-    )
-
-    if (-not (Get-Module -ListAvailable -Name PowerShellGet)) {
-        # Install the PowerShellGet module for the current user
-        Install-Module PowerShellGet -Scope CurrentUser -Force -AllowClobber
-    }
-
-    if ($Version -eq "latest") {
-        $Version = (PowerShellGet\Find-Module -AllVersions -AllowPrerelease posh-git | Select-Object -First 1).Version
-        Write-Host "Latest version of PoshGit: $Version"
-    }
-
-    Write-Host "Installing Posh-Git@$Version"
-    PowerShellGet\Install-Module posh-git -Scope CurrentUser -AllowPrerelease -Force -RequiredVersion $Version
 }
