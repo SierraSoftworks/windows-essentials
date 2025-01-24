@@ -1,0 +1,13 @@
+Device: Speakers TOPPING USB DAC {64c34bb5-a54d-4903-bfee-4486c64e4713}
+Include: Sennheiser HD 800 S (serial number 01070) ParametricEq.txt
+Preamp: -1.7 dB
+Device: Microphone Elgato Wave XLR {502c2251-90a6-4895-a049-d2642e2f94d2}
+# Elgato Wave EQ profile (reverse engineered)
+Preamp: -2.5 dB
+Filter: ON HP Fc 52 Hz
+Filter: ON LSC Fc 110 Hz Gain 1.1 dB Q 1.6027
+Filter: ON PK Fc 249 Hz Gain -0.8 dB Q 1.8486
+Filter: ON PK Fc 1250 Hz Gain -1.4 dB Q 0.8971
+Filter: ON PK Fc 3000 Hz Gain -0.6 dB Q 1.4957
+Filter: ON HSC Fc 7496 Hz Gain 3.2 dB Q 1.1772
+Filter: ON LPQ Fc 17961 Hz Q 0.6322

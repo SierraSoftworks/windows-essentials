@@ -1,0 +1,158 @@
+{
+	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
+	"CreationDate" : "2025-01-24T23:51:21.107-00:00",
+	"Sources" : 
+	[
+		{
+			"Packages" : 
+			[
+				{
+					"PackageIdentifier" : "CloudImperiumGames.RSILauncher"
+				},
+				{
+					"PackageIdentifier" : "CPUID.CPU-Z"
+				},
+				{
+					"PackageIdentifier" : "CPUID.HWMonitor"
+				},
+				{
+					"PackageIdentifier" : "Docker.DockerDesktop"
+				},
+				{
+					"PackageIdentifier" : "Git.Git"
+				},
+				{
+					"PackageIdentifier" : "SourceFoundry.HackFonts"
+				},
+				{
+					"PackageIdentifier" : "Mozilla.Firefox"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.OneDrive"
+				},
+				{
+					"PackageIdentifier" : "Prusa3D.PrusaSlicer"
+				},
+				{
+					"PackageIdentifier" : "VoiceAttack.VoiceAttack"
+				},
+				{
+					"PackageIdentifier" : "AgileBits.1Password"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.RemoteDesktopClient"
+				},
+				{
+					"PackageIdentifier" : "Yubico.Authenticator"
+				},
+				{
+					"PackageIdentifier" : "GoLang.Go"
+				},
+				{
+					"PackageIdentifier" : "OpenJS.NodeJS.LTS"
+				},
+				{
+					"PackageIdentifier" : "Logitech.GHUB"
+				},
+				{
+					"PackageIdentifier" : "GitHub.cli"
+				},
+				{
+					"PackageIdentifier" : "Logitech.OptionsPlus"
+				},
+				{
+					"PackageIdentifier" : "tailscale.tailscale"
+				},
+				{
+					"PackageIdentifier" : "Corsair.iCUE.5"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.Azure.FunctionsCoreTools"
+				},
+				{
+					"PackageIdentifier" : "Synology.DriveClient"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.AzureCLI"
+				},
+				{
+					"PackageIdentifier" : "SoftFever.OrcaSlicer"
+				},
+				{
+					"PackageIdentifier" : "Valve.Steam"
+				},
+				{
+					"PackageIdentifier" : "Yubico.YubikeyManager"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerToys"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.7"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.6"
+				},
+				{
+					"PackageIdentifier" : "TechPowerUp.GPU-Z"
+				},
+				{
+					"PackageIdentifier" : "Garmin.Express"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerShell"
+				},
+				{
+					"PackageIdentifier" : "Doist.Todoist"
+				},
+				{
+					"PackageIdentifier" : "OpenWhisperSystems.Signal"
+				},
+				{
+					"PackageIdentifier" : "Discord.Discord"
+				},
+				{
+					"PackageIdentifier" : "Rustlang.Rustup"
+				},
+				{
+					"PackageIdentifier" : "WinDirStat.WinDirStat"
+				},
+				{
+					"PackageIdentifier" : "Telegram.TelegramDesktop"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VisualStudioCode"
+				},
+				{
+					"PackageIdentifier" : "Python.Python.3.10"
+				},
+				{
+					"PackageIdentifier" : "M2Team.NanaZip"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.Teams"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.AppInstaller"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsTerminal"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsApp"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WSL"
+				}
+			],
+			"SourceDetails" : 
+			{
+				"Argument" : "https://cdn.winget.microsoft.com/cache",
+				"Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Name" : "winget",
+				"Type" : "Microsoft.PreIndexed.Package"
+			}
+		}
+	],
+	"WinGetVersion" : "1.10.40-preview"
+}
